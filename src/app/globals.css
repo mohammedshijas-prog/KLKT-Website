@@ -1,0 +1,113 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-display: "SF Pro Display", "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+html,
+body {
+  background: #ffffff;
+  color: #111111;
+  font-family: var(--font-sans);
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+}
+
+@keyframes worker-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.worker-marquee {
+  animation: worker-marquee 48s linear infinite;
+}
+
+.site {
+  width: min(1191px, calc(100% - 1.25rem));
+  margin-inline: auto;
+  padding-inline: 16px;
+}
+
+.site-pad {
+  padding-left: max(28px, calc((100% - 1191px) / 2 + 16px));
+  padding-right: max(28px, calc((100% - 1191px) / 2 + 16px));
+}
+
+@media (min-width: 768px) {
+  .site {
+    width: min(1191px, calc(100% - 2rem));
+    padding-inline: 21px;
+  }
+
+  .site-pad {
+    padding-left: max(37px, calc((100% - 1191px) / 2 + 21px));
+    padding-right: max(37px, calc((100% - 1191px) / 2 + 21px));
+  }
+}
+
+.earn-slider {
+  appearance: none;
+  width: 100%;
+  height: 22px;
+  background: transparent;
+  cursor: pointer;
+}
+
+.earn-slider:focus-visible {
+  outline: 2px solid #000;
+  outline-offset: 2px;
+}
+
+.earn-slider::-webkit-slider-runnable-track {
+  height: 13px;
+  border-radius: 4px;
+  background:
+    linear-gradient(#7c40ff, #7c40ff) 0 / var(--p) 100% no-repeat,
+    #e4d8ff;
+}
+
+.earn-slider::-webkit-slider-thumb {
+  appearance: none;
+  width: 12px;
+  height: 22px;
+  margin-top: -4.5px;
+  border-radius: 4px;
+  background:
+    linear-gradient(#fff, #fff) center / 4px 13px no-repeat,
+    #976afb;
+}
+
+.earn-slider::-moz-range-track {
+  height: 13px;
+  border-radius: 4px;
+  background: #e4d8ff;
+}
+
+.earn-slider::-moz-range-progress {
+  height: 13px;
+  border-radius: 4px;
+  background: #7c40ff;
+}
+
+.earn-slider::-moz-range-thumb {
+  width: 12px;
+  height: 22px;
+  border: 0;
+  border-radius: 4px;
+  background: #976afb;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .worker-marquee {
+    animation: none;
+  }
+}
