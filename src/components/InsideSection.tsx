@@ -91,7 +91,7 @@ export function InsideVideo({
     const root = rootRef.current;
     const section = root?.closest("section");
     const video = videoRef.current;
-    if (!(section instanceof HTMLElement) || !video) return;
+    if (!root || !(section instanceof HTMLElement) || !video) return;
 
     const motionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
 
