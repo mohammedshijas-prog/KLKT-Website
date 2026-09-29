@@ -109,7 +109,7 @@ export function HomeTwo() {
 
       <HomeTwoEarn />
 
-      <section className="site flex flex-col items-center py-24 text-center sm:py-32">
+      <section className="site flex flex-col items-center py-16 text-center sm:py-32">
         <h2 className="text-[clamp(32px,5vw,51px)] leading-[1.16] font-normal">
           Real company.
           <br />
@@ -130,8 +130,8 @@ export function HomeTwo() {
               </div>
             </div>
             <h3 className="mt-4 text-[24px] leading-8 sm:text-[28px]">
-              Backed by a registered company in
-              <br />
+              Backed by a registered company in{" "}
+              <br className="hidden sm:block" />
               the UAE
             </h3>
             <p className="mt-2.5 max-w-[551px] text-[15px] leading-[22px] text-[#0c0a08]/60">
@@ -168,9 +168,9 @@ export function HomeTwo() {
       </section>
 
       <section className="site pb-16 sm:pb-24">
-        <div className="relative flex flex-col gap-8 overflow-hidden rounded-[12px] px-6 py-10 sm:flex-row sm:items-center sm:justify-between sm:px-16 sm:py-16">
-          <div className="absolute inset-0 bg-[#7c40ff]" />
-          <img src="/home-2/cta.png" alt="" className="absolute inset-0 h-full w-full object-cover" />
+        <div className="relative flex flex-col gap-8 overflow-hidden rounded-[12px] bg-[linear-gradient(120deg,#f3f3f3_55%,#ece6fb)] px-6 py-10 sm:flex-row sm:bg-none sm:items-center sm:justify-between sm:px-16 sm:py-16">
+          <div className="absolute inset-0 hidden bg-[#7c40ff] sm:block" />
+          <img src="/home-2/cta.png" alt="" className="absolute inset-0 hidden h-full w-full object-cover sm:block" />
           <div className="relative max-w-[680px]">
             <h2 className="text-[28px] leading-tight sm:text-[36px] sm:leading-[26px]">Your first task is waiting.</h2>
             <p className="mt-3 text-[16px] leading-[22px] text-[#0c0a08]/60">

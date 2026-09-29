@@ -11,10 +11,10 @@ export const metadata: Metadata = {
 export default function HardwarePage() {
   return (
     <main className="bg-white">
-      <section className="h-[170vh] bg-white">
-        <div className="sticky top-0 flex h-screen flex-col items-center justify-center px-6 pt-24 pb-8 text-center">
+      <section className="h-[150svh] bg-white sm:h-[170vh]">
+        <div className="sticky top-0 flex h-svh flex-col sm:h-screen items-center justify-center px-6 pt-24 pb-8 text-center">
         <p
-          className={`text-[20px] leading-[1.28] tracking-[-0.4px] text-black/60`}
+          className={`text-[17px] leading-[1.28] tracking-[-0.4px] text-black/60 sm:text-[20px]`}
         >
           Data Collection Headband
         </p>
@@ -24,12 +24,12 @@ export default function HardwarePage() {
           Move. Capture. Train.
         </h1>
         <p
-          className={`mt-6 max-w-[640px] text-[20px] leading-[1.28] tracking-[-0.4px] text-black/60`}
+          className={`mt-4 max-w-[640px] text-[17px] leading-[1.35] sm:mt-6 sm:text-[20px] sm:leading-[1.28] tracking-[-0.4px] text-black/60`}
         >
           Real human movement, recorded on real shifts. Up to 8 cameras, synced to the
           millisecond.
         </p>
-        <InsideVideo className="mt-5 h-[min(34vh,360px)] w-full max-w-[820px]" />
+        <InsideVideo className="mt-5 h-[min(40svh,360px)] w-full max-w-[820px] sm:h-[min(34vh,360px)]" />
         <div className="mt-5 flex h-11 items-center gap-4 rounded-full border border-black/10 bg-white pr-1.5 pl-5">
           <span
             className={`text-[15px] leading-none tracking-[-0.2px] text-black`}

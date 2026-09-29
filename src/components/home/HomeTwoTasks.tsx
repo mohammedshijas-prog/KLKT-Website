@@ -53,7 +53,7 @@ function DeviceRow({
   flip?: boolean;
 }) {
   return (
-    <div className="relative flex h-[129px] w-full items-center gap-3 overflow-hidden rounded-[26px] border border-white/40 bg-gradient-to-b from-white/30 to-white/70 py-2 pr-3 pl-2 shadow-[0_4px_15px_rgba(172,172,172,0.1)]">
+    <div className="relative flex min-h-[129px] w-full items-center gap-3 overflow-hidden rounded-[26px] border border-white/40 bg-gradient-to-b from-white/30 to-white/70 py-2 pr-3 pl-2 shadow-[0_4px_15px_rgba(172,172,172,0.1)]">
       <div className="flex size-[113px] shrink-0 items-center justify-center overflow-hidden rounded-[20px] bg-white">
         <img
           src={image}
@@ -69,12 +69,12 @@ function DeviceRow({
           {paired ? "Paired and Connected" : "Pairing Failed"}
         </p>
         {paired ? null : (
-          <p className="mt-2 flex items-center text-[12px] leading-[1.2]">
+          <p className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 text-[12px] leading-[1.2]">
             <span className="inline-flex items-center gap-0.5 text-black">
               Retry Pairing
               <img src="/home-2/tasks/retry.svg" alt="" width={14} height={14} />
             </span>
-            <span className="ml-3 text-black/70">Troubleshoot</span>
+            <span className="text-black/70">Troubleshoot</span>
           </p>
         )}
       </div>

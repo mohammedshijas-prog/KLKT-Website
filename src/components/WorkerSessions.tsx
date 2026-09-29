@@ -28,8 +28,8 @@ export function WorkerSessions() {
     <section className="w-full overflow-hidden bg-[#D9D5F4] pt-16 sm:pt-[184px]">
       <div className="site">
         <h2 className="max-w-[725px] text-[clamp(30px,6vw,49px)] leading-[1.15] font-medium tracking-[-0.03em] text-black">
-          Join 2.5 million workers recording
-          <br />
+          Join 2.5 million workers recording{" "}
+          <br className="hidden sm:block" />
           the work <span className="text-black/60">they already do</span>
         </h2>
         <p className="mt-4 text-[18px] leading-[1.21] tracking-[-0.4px] text-black/60 sm:text-[20px]">

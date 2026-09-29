@@ -108,7 +108,7 @@ export function WorkerNoor() {
                     <br />
                     {card.lines[1]}
                   </h3>
-                  <p className="mt-5 text-[16px] leading-[1.45] whitespace-pre-line text-[#1f2025]/60 sm:mt-[22px] sm:text-[20px] sm:leading-[31.2px]">
+                  <p className="mt-5 text-[16px] leading-[1.45] text-[#1f2025]/60 sm:whitespace-pre-line sm:mt-[22px] sm:text-[20px] sm:leading-[31.2px]">
                     {card.body}
                   </p>
                 </div>

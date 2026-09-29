@@ -17,11 +17,13 @@ export function HomeTwoHero({ children }: { children: ReactNode }) {
     if (!section || !frame) return;
 
     const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const phone = window.matchMedia("(max-width: 639px)");
 
     const apply = (progress: number) => {
       const eased = smooth(progress);
-      frame.style.transform = `scale(${1 - 0.32 * eased})`;
-      frame.style.borderRadius = `${eased * 40}px`;
+      const shrink = phone.matches ? 0.04 : 0.32;
+      frame.style.transform = `scale(${1 - shrink * eased})`;
+      frame.style.borderRadius = `${eased * (phone.matches ? 20 : 40)}px`;
     };
 
     if (motion.matches) {
@@ -52,8 +54,8 @@ export function HomeTwoHero({ children }: { children: ReactNode }) {
   }, []);
 
   return (
-    <section ref={sectionRef} className="h-[220vh] bg-white">
-      <div className="sticky top-0 h-screen">
+    <section ref={sectionRef} className="h-[150svh] bg-white sm:h-[220vh]">
+      <div className="sticky top-0 h-svh sm:h-screen">
         <div
           ref={frameRef}
           className="relative h-full w-full origin-center overflow-hidden bg-black text-center text-white will-change-transform"

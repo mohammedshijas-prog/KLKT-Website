@@ -9,6 +9,7 @@ const information = [
   { href: "/worker-app", label: "KLKT" },
   { href: "/hardware", label: "Roboband" },
   { href: "/business", label: "Business" },
+  { href: "/blog", label: "Blog" },
 ];
 
 export function Footer() {

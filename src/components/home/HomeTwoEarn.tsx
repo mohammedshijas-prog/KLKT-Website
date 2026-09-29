@@ -1,12 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { StoreBadges } from "@/components/home/StoreBadges";
 import { rates } from "@/lib/business-rates";
-
-const ios = "https://apps.apple.com/us/iphone/search?term=klkt";
-const android =
-  "https://play.google.com/store/apps/details?id=com.cntxt.cntxtai.data.services&hl=en";
 
 const focus =
   "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black";
@@ -143,7 +138,7 @@ export function HomeTwoEarn({ panel = "bg-[#c1a8f8]" }: { panel?: string }) {
   const monthly = audience === "me" ? meMonthly : partnerMonthly;
 
   return (
-    <section className="site py-20 text-center sm:py-28">
+    <section className="site py-12 text-center sm:py-28">
       <h2 className="text-[clamp(32px,5vw,51px)] leading-[1.12] font-medium tracking-[-0.01em]">
         See what you could earn.
         <br />
@@ -357,9 +352,7 @@ export function HomeTwoEarn({ panel = "bg-[#c1a8f8]" }: { panel?: string }) {
                 </>
               )}
             </dl>
-            {audience === "me" ? (
-              <StoreBadges ios={ios} android={android} className="mt-8 justify-start" />
-            ) : (
+            {audience === "me" ? null : (
               <a
                 href="mailto:info@cntxt.com"
                 className={`mt-8 inline-flex h-11 items-center rounded-full bg-black px-5 text-[15px] font-medium text-white ${focus}`}

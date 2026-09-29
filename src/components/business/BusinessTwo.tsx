@@ -65,7 +65,7 @@ const languages = [
 export function BusinessTwo() {
   return (
     <main>
-      <section className="site flex min-h-[calc(100svh-120px)] flex-col items-center justify-center gap-10 py-24 lg:flex-row lg:gap-6">
+      <section className="site flex min-h-[calc(100svh-120px)] flex-col items-center justify-center gap-10 pt-24 pb-10 sm:py-24 lg:flex-row lg:gap-6">
         <div className="flex flex-1 flex-col items-start justify-center gap-8">
           <div>
             <h1 className="max-w-[546px] text-[clamp(40px,5vw,64px)] leading-[1.11] font-normal tracking-[-0.01em] text-[#0c0a08]">
@@ -98,7 +98,7 @@ export function BusinessTwo() {
         </div>
       </section>
 
-      <section className="site flex flex-col items-center py-16 sm:py-24">
+      <section className="site flex flex-col items-center pt-16 pb-4 sm:py-24">
         <p className="text-[20px] leading-[22px] font-medium tracking-[-0.24px] text-[#222326]">
           Data used by
         </p>
@@ -108,13 +108,13 @@ export function BusinessTwo() {
           ))}
         </div>
 
-        <h2 className="mt-20 text-center text-[clamp(32px,5vw,51px)] leading-[1.16] font-normal tracking-[-0.01em] sm:mt-28">
+        <h2 className="mt-16 text-center text-[clamp(32px,5vw,51px)] leading-[1.16] font-normal tracking-[-0.01em] sm:mt-28">
           Robots learn from real work.
           <br />
           Your sites have it.
         </h2>
 
-        <div className="mt-20 grid w-full gap-3 sm:mt-28 lg:grid-cols-3">
+        <div className="mt-10 grid w-full gap-x-3 gap-y-8 sm:mt-28 lg:grid-cols-3">
           {benefits.map((card) => (
             <article key={card.title}>
               {card.src ? (
@@ -145,7 +145,7 @@ export function BusinessTwo() {
 
       <HomeTwoEarn panel="bg-[#7c40ff]" />
 
-      <section className="overflow-hidden py-16 sm:py-24">
+      <section className="overflow-hidden py-12 sm:py-24">
         <div className="site">
           <h2 className="text-[clamp(32px,4vw,48px)] leading-[1.04] font-normal tracking-[-0.01em]">
             Join the program. Grow with it.
@@ -211,13 +211,13 @@ export function BusinessTwo() {
         </div>
       </section>
 
-      <section className="site py-16 text-center sm:py-20">
+      <section className="site py-12 text-center sm:py-20">
         <h2 className="text-[clamp(32px,4vw,48px)] leading-[1.04] font-normal tracking-[-0.01em]">
           We&apos;re on your floor.
           <br />
           Not just in your inbox.
         </h2>
-        <div className="mt-16 grid gap-10 text-left sm:grid-cols-3 sm:gap-6">
+        <div className="mt-10 grid gap-10 text-left sm:mt-16 sm:grid-cols-3 sm:gap-6">
           <div>
             <span className="flex size-12 items-center justify-center rounded-[8px] bg-[#f3edff]">
               <img src="/business-2/icon-glasses.svg" alt="" width={24} height={24} />
@@ -251,11 +251,11 @@ export function BusinessTwo() {
         </div>
       </section>
 
-      <section id="demo" className="scroll-mt-28 bg-[#f5f5f7] px-4 py-20 sm:py-28">
+      <section id="demo" className="scroll-mt-28 bg-[#f5f5f7] px-4 py-14 sm:py-28">
         <h2 className="text-center text-[clamp(32px,5vw,51px)] leading-[1.16] font-normal tracking-[-0.01em]">
           Explore KLKT for your site
         </h2>
-        <div className="mx-auto mt-12 flex justify-center sm:mt-16">
+        <div className="mx-auto mt-8 flex justify-center sm:mt-16">
           <BusinessTwoForm />
         </div>
       </section>
