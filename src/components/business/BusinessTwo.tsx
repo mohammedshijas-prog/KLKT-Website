@@ -1,30 +1,24 @@
-import { BusinessTwoForm } from "@/components/business/BusinessTwoForm";
+import { PartnerSection } from "@/components/business/PartnerForm";
 import { HomeTwoEarn } from "@/components/home/HomeTwoEarn";
+import { HomeTwoHero } from "@/components/home/HomeTwoHero";
+import { WorkerSessions } from "@/components/WorkerSessions";
 
-const logos = [
-  { src: "/business-2/logo-apple.svg", alt: "Apple Watch", width: 88, height: 24 },
-  { src: "/business-2/logo-oura.svg", alt: "Oura", width: 59.25, height: 18.376 },
-  { src: "/business-2/logo-garmin.svg", alt: "Garmin", width: 111.75, height: 16.111 },
-  { src: "/business-2/logo-amazfit.svg", alt: "Amazfit", width: 90.2303, height: 20.8202 },
-  { src: "/business-2/logo-google.svg", alt: "Google Health", width: 137.258, height: 22.0623 },
-];
-
-const benefits = [
+const partnership = [
   {
-    title: "No change to your operations",
-    body: "Workers do their normal tasks. The headband and wristband record while they work.",
-    src: "/business-2/card-operations.png",
-    alt: "Workers wearing headbands while packing, typing, and repairing equipment",
+    title: "Your team records",
+    body: "The everyday work they already do, captured hands-free on the job with a simple headset.",
+    video: "/business-2/partnership-team-records.mp4",
   },
   {
-    title: "Partners in the process",
-    body: "We handle setup, consent and review, so your managers stay focused on the site.",
-    src: "/business-2/card-partners.png",
-    alt: "Two team members fitting a headband on a worker and checking a tablet",
+    title: "KLKT turns it into AI training data",
+    body: "That real-world footage becomes AI training data behind smarter AI and robotics.",
+    video: "/business-2/partnership-ai-training.mp4",
   },
   {
-    title: "Paid for what counts",
-    body: "Every hour is scored and human-confirmed. You earn for each one that is accepted.",
+    title: "Everyone earns",
+    body: "shift pays per accepted hour. Your team takes home income, your business shares the upside.",
+    image: "/business-2/partnership-cash.png",
+    alt: "Cash balance of $12,743.94 ready to cash out",
   },
 ];
 
@@ -33,15 +27,15 @@ const steps = [
     title: "Talk to us",
     body: "Tell us about your site, your teams and the work they do.",
     visual: "photo" as const,
-    src: "/business-2/talk.png",
-    alt: "Two people in purple shirts talking",
+    src: "/business-2/hero-cleaning.png",
+    alt: "Two cleaners wearing headbands, one wiping a table and one mopping",
   },
   {
     title: "We set up",
     body: "Headbands, wristbands and the KLKT app, or workers' own phones.",
     visual: "photo" as const,
-    src: "/business-2/setup.png",
-    alt: "Person in a red shirt holding a box",
+    src: "/business-2/card-paid.png",
+    alt: "Worker wearing a headband holding a parcel",
   },
   {
     title: "Teams record",
@@ -65,99 +59,77 @@ const languages = [
 export function BusinessTwo() {
   return (
     <main>
-      <section className="site flex min-h-[calc(100svh-120px)] flex-col items-center justify-center gap-10 pt-24 pb-10 sm:py-24 lg:flex-row lg:gap-6">
-        <div className="flex flex-1 flex-col items-start justify-center gap-8">
-          <div>
-            <h1 className="max-w-[546px] text-[clamp(40px,5vw,64px)] leading-[1.11] font-normal tracking-[-0.01em] text-[#0c0a08]">
-              The sites building
-              <br />
-              physical AI run on KLKT.
-            </h1>
-            <p className="mt-3 max-w-[634px] text-[18px] leading-6 text-[#0c0a08]/60">
-              Your teams work as usual. You get paid for every accepted hour.
-            </p>
-          </div>
-          <div>
-            <a
-              href="#demo"
-              className="inline-flex min-w-[169px] items-center justify-center rounded-[6px] bg-[#7c40ff] px-5 py-5 text-[13.1px] leading-[11px] text-white"
-            >
-              Become a partner
-            </a>
-            <p className="mt-2 text-[14px] leading-5 text-[#0c0a08]/60">
-              Live across UAE, Jordan and the US
-            </p>
-          </div>
-        </div>
-        <div className="relative aspect-[634/542] w-full flex-1 overflow-hidden rounded-[22px] bg-[rgba(160,150,150,0.2)]">
-          <img
-            src="/business-2/hero-cleaning.png"
-            alt="Two cleaners wearing headbands, one wiping a table and one mopping the floor"
-            className="pointer-events-none absolute top-[9.59%] left-[-2.52%] h-[80.81%] w-[105.52%] max-w-none object-cover"
-          />
-        </div>
-      </section>
-
-      <section className="site flex flex-col items-center pt-16 pb-4 sm:py-24">
-        <p className="text-[20px] leading-[22px] font-medium tracking-[-0.24px] text-[#222326]">
-          Data used by
-        </p>
-        <div className="mt-5 flex flex-wrap items-center justify-center gap-x-12 gap-y-5">
-          {logos.map((logo) => (
-            <img key={logo.alt} src={logo.src} alt={logo.alt} width={logo.width} height={logo.height} className="shrink-0" />
-          ))}
-        </div>
-
-        <h2 className="mt-16 text-center text-[clamp(32px,5vw,51px)] leading-[1.16] font-normal tracking-[-0.01em] sm:mt-28">
-          Robots learn from real work.
+      <HomeTwoHero video="/hero.mp4">
+        <p className="text-[16px] leading-[1.28] tracking-[0.02em] text-white uppercase sm:text-[20px]">For businesses</p>
+        <h1 className="mx-auto mt-3 text-[clamp(40px,7.5vw,96px)] leading-[1.05] font-normal tracking-[-0.03em]">
+          Get paid for
           <br />
-          Your sites have it.
-        </h2>
+          work you already do.
+        </h1>
+        <a
+          href="#partner"
+          className="mt-10 inline-flex h-14 items-center justify-center rounded-full bg-white px-9 text-[18px] text-black transition-opacity hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:h-16 sm:text-[20px]"
+        >
+          Become a partner
+        </a>
+      </HomeTwoHero>
 
-        <div className="mt-10 grid w-full gap-x-3 gap-y-8 sm:mt-28 lg:grid-cols-3">
-          {benefits.map((card) => (
-            <article key={card.title}>
-              {card.src ? (
+      <section className="site py-12 sm:py-24">
+        <h2 className="max-w-[573px] text-[clamp(38px,5vw,64px)] leading-[1.05] font-normal tracking-[-0.01em] text-[#0c0a08]">
+          How does the shift partnership work?
+        </h2>
+        <p className="mt-3 max-w-[616px] text-[17px] leading-[1.4] text-black/60 sm:text-[20px] sm:leading-[23px]">
+          Your team records the everyday work they already do. shift turns it into AI training data, and everyone gets
+          paid, with zero disruption.
+        </p>
+        <div className="mt-8 grid gap-x-3 gap-y-8 lg:grid-cols-3">
+          {partnership.map((step) => (
+            <article key={step.title}>
+              {step.video ? (
                 <div className="relative h-[320px] overflow-hidden rounded-[16px] bg-[rgba(124,64,255,0.2)] sm:h-[407px]">
-                  <img src={card.src} alt={card.alt} className="absolute inset-0 size-full object-cover" />
-                </div>
-              ) : (
-                <div className="relative h-[320px] overflow-hidden rounded-[16px] bg-[#dbcbff] sm:h-[407px]">
-                  <div className="absolute top-[42.75%] left-[57.7%] flex h-[45px] items-center gap-2.5 rounded-[20px] bg-[#effff5] p-5">
-                    <img src="/business-2/icon-check-circle.svg" alt="" width={32} height={32} className="shrink-0" />
-                    <span className="text-[16px] font-semibold whitespace-nowrap text-[#0f172a]">
-                      Paid
-                    </span>
-                  </div>
-                  <img
-                    src="/business-2/card-paid.png"
-                    alt="Worker wearing a headband holding a parcel"
-                    className="pointer-events-none absolute bottom-[-7px] left-1/2 aspect-square w-[79.2%] max-w-[348px] -translate-x-1/2 object-cover"
+                  <video
+                    src={step.video}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    preload="metadata"
+                    className="absolute inset-0 size-full object-cover"
                   />
                 </div>
+              ) : step.image ? (
+                <div className="relative h-[320px] overflow-hidden rounded-[16px] bg-[#dbcbff] sm:h-[407px]">
+                  <img
+                    src={step.image}
+                    alt={step.alt}
+                    className="absolute top-[24.8%] left-1/2 aspect-[326/205] w-[77%] max-w-[326px] -translate-x-1/2 object-contain"
+                  />
+                </div>
+              ) : (
+                <div className="h-[320px] rounded-[16px] bg-[rgba(124,64,255,0.2)] sm:h-[407px]" />
               )}
-              <h3 className="mt-4 text-[24px] leading-8 font-medium">{card.title}</h3>
-              <p className="mt-2.5 text-[15px] leading-[22px] text-[#0c0a08]/60">{card.body}</p>
+              <h3 className="mt-4 text-[24px] leading-8 font-medium">{step.title}</h3>
+              <p className="mt-2.5 text-[15px] leading-[22px] text-[#0c0a08]/60">{step.body}</p>
             </article>
           ))}
         </div>
       </section>
 
-      <HomeTwoEarn panel="bg-[#7c40ff]" />
+      <WorkerSessions />
 
-      <section className="overflow-hidden py-12 sm:py-24">
+      <section className="overflow-hidden bg-white py-12 sm:py-[109px]">
         <div className="site">
-          <h2 className="text-[clamp(32px,4vw,48px)] leading-[1.04] font-normal tracking-[-0.01em]">
+          <h2 className="text-[clamp(32px,4vw,48px)] leading-[1.04] font-normal tracking-[-0.01em] text-[#0c0a08]">
             Join the program. Grow with it.
           </h2>
         </div>
-        <div className="site-pad mt-8 flex gap-3 overflow-x-auto pb-2 lg:grid lg:grid-cols-4 lg:overflow-visible">
+        <div className="site-pad mt-8 flex gap-3 overflow-x-auto pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
           {steps.map((step) => (
             <article
               key={step.title}
-              className="relative h-[395px] w-[300px] shrink-0 overflow-hidden rounded-[26px] bg-[#f5f5f7] sm:w-[340px] lg:w-auto"
+              className="relative h-[395px] w-[300px] shrink-0 overflow-hidden rounded-[26px] bg-[#f5f5f7] sm:w-[372px]"
             >
-              <div className="relative z-10 px-7 pt-7">
+              <div className="relative z-10 px-[29px] pt-[29px]">
                 <h3 className="text-[16.9px] leading-[22px] font-medium tracking-[-0.36px]">{step.title}</h3>
                 <p className="mt-1 max-w-[312px] text-[15.1px] leading-[21px] text-black/60">{step.body}</p>
               </div>
@@ -167,13 +139,13 @@ export function BusinessTwo() {
                   alt={step.alt}
                   className={`pointer-events-none absolute max-w-none object-cover ${
                     step.title === "Talk to us"
-                      ? "bottom-0 left-[-16px] h-[250px] w-[118%]"
-                      : "right-4 bottom-0 h-[270px] w-[78%]"
+                      ? "top-[165px] left-[-13px] h-[216px] w-[330px] sm:top-[138px] sm:left-[-16px] sm:h-[265px] sm:w-[405px]"
+                      : "top-[140px] left-1/2 h-[255px] w-[256px] -translate-x-1/2 sm:top-[106px] sm:h-[289px] sm:w-[290px]"
                   }`}
                 />
               ) : null}
               {step.visual === "languages" ? (
-                <div className="absolute inset-x-5 bottom-6 flex flex-col gap-2">
+                <div className="absolute inset-x-[22px] top-[137px] flex flex-col gap-2">
                   {languages.map((language) => (
                     <div
                       key={language.name}
@@ -201,9 +173,9 @@ export function BusinessTwo() {
               ) : null}
               {step.visual === "cash" ? (
                 <img
-                  src="/business-2/cash.png"
+                  src="/business-2/partnership-cash.png"
                   alt="Cash balance ready to withdraw"
-                  className="pointer-events-none absolute right-5 bottom-4 h-[180px] w-[calc(100%-40px)] object-contain object-bottom"
+                  className="pointer-events-none absolute top-[164px] left-1/2 h-[205px] w-[326px] max-w-[calc(100%-24px)] -translate-x-1/2 object-contain"
                 />
               ) : null}
             </article>
@@ -211,54 +183,10 @@ export function BusinessTwo() {
         </div>
       </section>
 
-      <section className="site py-12 text-center sm:py-20">
-        <h2 className="text-[clamp(32px,4vw,48px)] leading-[1.04] font-normal tracking-[-0.01em]">
-          We&apos;re on your floor.
-          <br />
-          Not just in your inbox.
-        </h2>
-        <div className="mt-10 grid gap-10 text-left sm:mt-16 sm:grid-cols-3 sm:gap-6">
-          <div>
-            <span className="flex size-12 items-center justify-center rounded-[8px] bg-[#f3edff]">
-              <img src="/business-2/icon-glasses.svg" alt="" width={24} height={24} />
-            </span>
-            <h3 className="mt-8 text-[20px] leading-[26px] font-normal">Hands-on onboarding</h3>
-            <p className="mt-1 text-[16px] leading-[22px] text-[#0c0a08]/60">
-              We set up the hardware and the KLKT app with your teams.
-            </p>
-          </div>
-          <div>
-            <span className="flex size-12 items-center justify-center rounded-[8px] bg-[#f3edff]">
-              <img src="/business-2/icon-help.svg" alt="" width={24} height={24} />
-            </span>
-            <h3 className="mt-8 text-[20px] leading-[26px] font-normal">Help on every shift</h3>
-            <p className="mt-1 text-[16px] leading-[22px] text-[#0c0a08]/60">
-              Noor answers workers&apos; questions, and our team supports your managers.
-            </p>
-          </div>
-          <div>
-            <span className="flex size-12 items-center justify-center rounded-[8px] bg-[#f3edff]">
-              <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M4 16l5-5 3 3 8-8" fill="none" stroke="#7c40ff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                <path d="M14 6h6v6" fill="none" stroke="#7c40ff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </span>
-            <h3 className="mt-8 text-[20px] leading-[26px] font-normal">Built to grow with you</h3>
-            <p className="mt-1 text-[16px] leading-[22px] text-[#0c0a08]/60">
-              Start with one site, then add more sites and workers.
-            </p>
-          </div>
-        </div>
-      </section>
+      <HomeTwoEarn panel="bg-[#7c40ff]" />
 
-      <section id="demo" className="scroll-mt-28 bg-[#f5f5f7] px-4 py-14 sm:py-28">
-        <h2 className="text-center text-[clamp(32px,5vw,51px)] leading-[1.16] font-normal tracking-[-0.01em]">
-          Explore KLKT for your site
-        </h2>
-        <div className="mx-auto mt-8 flex justify-center sm:mt-16">
-          <BusinessTwoForm />
-        </div>
-      </section>
+      <PartnerSection />
+
     </main>
   );
 }

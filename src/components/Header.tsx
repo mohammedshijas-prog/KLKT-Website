@@ -25,7 +25,7 @@ export function Header() {
     pathname.startsWith("/blog");
   const [compact, setCompact] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const overHeroVideo = pathname === "/" && !compact;
+  const overHeroVideo = (pathname === "/" || pathname === "/business") && !compact;
   const darkText = !overHeroVideo && (onLightPage || compact);
 
   useEffect(() => {

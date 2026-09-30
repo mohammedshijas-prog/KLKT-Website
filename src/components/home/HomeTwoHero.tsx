@@ -7,7 +7,7 @@ function smooth(value: number) {
   return t * t * (3 - 2 * t);
 }
 
-export function HomeTwoHero({ children }: { children: ReactNode }) {
+export function HomeTwoHero({ children, video }: { children: ReactNode; video?: string }) {
   const sectionRef = useRef<HTMLElement>(null);
   const frameRef = useRef<HTMLDivElement>(null);
 
@@ -61,11 +61,25 @@ export function HomeTwoHero({ children }: { children: ReactNode }) {
           className="relative h-full w-full origin-center overflow-hidden bg-black text-center text-white will-change-transform"
           style={{ transform: "scale(1)", borderRadius: 0 }}
         >
-          <img
-            src="/home-2/hero.png"
-            alt=""
-            className="absolute inset-0 h-full w-full object-cover"
-          />
+          {video ? (
+            <video
+              src={video}
+              poster="/home-2/hero.png"
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="auto"
+              aria-hidden="true"
+              className="absolute inset-0 h-full w-full object-cover"
+            />
+          ) : (
+            <img
+              src="/home-2/hero.png"
+              alt=""
+              className="absolute inset-0 h-full w-full object-cover"
+            />
+          )}
           <div
             aria-hidden="true"
             className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.48)_0%,rgba(0,0,0,0.28)_46%,rgba(0,0,0,0.52)_100%)]"
