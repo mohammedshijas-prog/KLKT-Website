@@ -142,9 +142,6 @@ export function Footer() {
         </div>
 
         <div className="mt-12 flex flex-col gap-3 rounded-[24px] border border-white/55 px-4 py-3 sm:mt-20 sm:flex-row sm:items-center sm:justify-between sm:rounded-full sm:px-[19px] sm:py-[10px] lg:mt-[88px]">
-          <p className="text-[14.9px] leading-[13px] font-medium tracking-[-0.63px] text-white/40">
-            © 2026. KLKT. All Rights Reserved.
-          </p>
           <div className="flex items-center gap-[17px] text-[15.2px] leading-[15px] font-medium tracking-[-0.32px] text-white">
             <a href="https://www.cntxt.tech/klkt-privacy-policy" target="_blank" rel="noopener noreferrer">
               Privacy Policy
